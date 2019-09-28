@@ -54,7 +54,7 @@ public enum ModuleType {
     RS2,    //Serial Light Protocol module
     TE1(DTEMModule.class),    //Temperature sensor
     TE2(DTEMModule.class),    //Temperature sensor with 2*16 char LCD
-    TRP,    //4 teleruptors
+    TRP(DTRP01Module.class),    //4 teleruptors
     TPV,    //2 shutter command with teleruptors Bit 0 Relay 1 = UP Bit 1 Relay 1 = DOWN
     TRV,    //4 shutter inverters Bit 0 Relay 1 = UP Bit 1 Relay 1 = DOWN
     V24,    //1 DC shutter command Bit 0 = UP – Bit 1 = DOWN

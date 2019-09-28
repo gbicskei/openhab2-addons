@@ -94,7 +94,7 @@ public abstract class DomintellItemGroupHandler extends BaseThingHandler impleme
     }
 
     private void touchItems(DomintellRegistry registry) {
-        thing.getChannels().forEach(c->{
+        thing.getChannels().forEach(c -> {
             ModuleConfig config = c.getConfiguration().as(ModuleConfig.class);
             Module module = registry.getDomintellModule(config.getModuleType(), config.getSerialNumber());
             module.updateState();
@@ -146,11 +146,23 @@ public abstract class DomintellItemGroupHandler extends BaseThingHandler impleme
             //update description
             List<Channel> newChannels = new ArrayList<>();
             for (Item item : itemGroup.getItems()) {
-                Channel c = channels.get(item.getItemKey());
+                ItemKey key = item.getItemKey();
+                Channel c = channels.get(key);
                 if (c != null) {
                     newChannels.add(callback.editChannel(thing, c.getUID())
                             .withLabel(item.getLabel())
                             .withConfiguration(c.getConfiguration())
+                            .withDescription(item.getDescription())
+                            .build());
+                } else {
+                    Configuration config = new Configuration();
+                    config.put(CONFIG_MODULE_TYPE, key.getModuleKey().getModuleType().toString());
+                    config.put(CONFIG_SERIAL_NUMBER, key.getModuleKey().getSerialNumber().getAddressInt().toString());
+
+                    newChannels.add(callback.createChannelBuilder(new ChannelUID(thing.getUID(), key.toId()), CHANNEL_TYPES.get(item.getType()))
+                            .withConfiguration(config)
+                            .withLabel(item.getLabel())
+                            .withDescription(item.getDescription())
                             .build());
                 }
             }

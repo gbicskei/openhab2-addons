@@ -88,10 +88,12 @@ public class DomintellRegistry {
             } catch (Exception e) {
                 logger.error("Unable to instantiate module: {}", serialNumber, e);
             }
-            if (module != null && module.getConfigChangeListener() == null) {
-                configEventListener.handleNewDiscoverable(module);
-            }
         }
+
+        if (module != null && module.getConfigChangeListener() == null) {
+            configEventListener.handleNewDiscoverable(module);
+        }
+
         if (!(moduleClass.isInstance(module))) {
             logger.error("Invalid module type found at given serialNumber: {}", serialNumber);
         }

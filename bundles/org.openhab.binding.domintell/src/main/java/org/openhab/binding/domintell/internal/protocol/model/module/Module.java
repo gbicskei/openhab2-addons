@@ -116,9 +116,8 @@ public abstract class Module extends Discoverable {
         if (data != null) {
             if (data.contains("[")) {
                 logger.debug("Updating module description: {}->{}", getModuleKey(), data);
-                if (message.getIoNumber() == null) {
-                    description = Description.parseInfo(data);
-                } else {
+                description = Description.parseInfo(data);
+                if (message.getIoNumber() != null || getModuleKey().getModuleType() == ModuleType.VAR) {
                     ItemKey key = new ItemKey(getModuleKey(), message.getIoNumber());
                     Item item = items.get(key);
                     if (item != null) {
