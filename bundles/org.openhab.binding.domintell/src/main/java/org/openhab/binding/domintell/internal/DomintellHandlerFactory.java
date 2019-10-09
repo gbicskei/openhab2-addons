@@ -113,6 +113,9 @@ public class DomintellHandlerFactory extends BaseThingHandlerFactory {
                     case MODULE_DIM:
                         handler = new DomintellDimmerModuleHandler(thing, registry);
                         break;
+                    case MODULE_TRV:
+                        handler = new DomintellShutterModuleHandler(thing, registry);
+                        break;
                 }
                 if (handler != null) {
                     discoveryService.removeModule(handler.getModule());

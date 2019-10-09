@@ -63,6 +63,7 @@ public class DomintellDiscoveryService extends AbstractDiscoveryService {
         put(ModuleType.BU4, THING_TYPE_MODULE_PBX);
         put(ModuleType.BU6, THING_TYPE_MODULE_PBX);
         put(ModuleType.DIM, THING_TYPE_MODULE_DIM);
+        put(ModuleType.TRV, THING_TYPE_MODULE_TRV);
         put(ModuleType.D10, THING_TYPE_MODULE_D10);
     }};
 

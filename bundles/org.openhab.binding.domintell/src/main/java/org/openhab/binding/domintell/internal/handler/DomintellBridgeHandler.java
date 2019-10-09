@@ -15,6 +15,7 @@ package org.openhab.binding.domintell.internal.handler;
 import org.eclipse.jdt.annotation.Nullable;
 import org.eclipse.smarthome.config.core.Configuration;
 import org.eclipse.smarthome.core.library.types.DateTimeType;
+import org.eclipse.smarthome.core.library.types.StringType;
 import org.eclipse.smarthome.core.thing.Bridge;
 import org.eclipse.smarthome.core.thing.ChannelUID;
 import org.eclipse.smarthome.core.thing.ThingStatus;
@@ -103,7 +104,9 @@ public class DomintellBridgeHandler extends BaseBridgeHandler {
                     updateDomintellSysDate();
                 }
             } else if (CHANNEL_SYSTEM_COMMAND.equals(channelUID.getId())) {
-                connection.scan();
+                //connection.scan();
+                StringType st = (StringType) command;
+                connection.sendCommand(st.toString());
             }
         }
     }

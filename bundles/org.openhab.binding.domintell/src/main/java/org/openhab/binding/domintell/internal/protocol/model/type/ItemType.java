@@ -18,5 +18,5 @@ package org.openhab.binding.domintell.internal.protocol.model.type;
 * @author Gabor Bicskei - Initial contribution
 */
 public enum ItemType {
-    contact, output, numericVar, booleanVar, string
+    contact, output, numericVar, booleanVar, string, shutter
 }

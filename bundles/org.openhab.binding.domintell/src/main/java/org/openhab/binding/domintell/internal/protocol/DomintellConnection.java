@@ -516,7 +516,7 @@ public class DomintellConnection {
                     Module module = registry.getDomintellModule(moduleType, message.getSerialNumber());
                     module.processStateUpdate(message);
                 } else {
-                    logger.trace("Module type not supported. Dropping message", message);
+                    logger.trace("Module type not supported. Dropping message: {}", message);
                 }
             } catch (Exception e) {
                 logger.debug("Error processing the message: {}", message.getMessage(), e);

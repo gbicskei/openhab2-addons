@@ -108,10 +108,10 @@ public class DomintellContactModuleHandler extends DomintellModuleHandler {
                     } else if (LONG_PUSH.equals(parts[0])) {
                         getModule().longPush(idx);
                     } else {
-                        logger.debug("Unknown command: {}->{}", new ItemKey(getModule().getModuleKey(), cmd));
+                        logger.debug("Unknown command: {}->{}", new ItemKey(getModule().getModuleKey()), cmd);
                     }
                 } catch (NumberFormatException e) {
-                    logger.debug("Unknown command: {}->{}", new ItemKey(getModule().getModuleKey(), cmd));
+                    logger.debug("Unknown command: {}->{}", new ItemKey(getModule().getModuleKey()), cmd);
                 }
             }
         } else if (command == RefreshType.REFRESH) {

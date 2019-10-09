@@ -46,6 +46,7 @@ public class DomintellBindingConstants {
     static final String MODULE_DIM = "moduleDIM";
     static final String MODULE_D10 = "moduleD10";
     static final String MODULE_TRP = "moduleTRP";
+    static final String MODULE_TRV = "moduleTRV";
 
     //module thing types
     public static final ThingTypeUID THING_TYPE_MODULE_TEX = new ThingTypeUID(BINDING_ID, MODULE_TEX);
@@ -57,11 +58,13 @@ public class DomintellBindingConstants {
     public static final ThingTypeUID THING_TYPE_MODULE_DIM = new ThingTypeUID(BINDING_ID, MODULE_DIM);
     public static final ThingTypeUID THING_TYPE_MODULE_D10 = new ThingTypeUID(BINDING_ID, MODULE_D10);
     public static final ThingTypeUID THING_TYPE_MODULE_TRP = new ThingTypeUID(BINDING_ID, MODULE_TRP);
+    public static final ThingTypeUID THING_TYPE_MODULE_TRV = new ThingTypeUID(BINDING_ID, MODULE_TRV);
 
     // thing type sets
     public static final Set<ThingTypeUID> BRIDGE_THING_TYPES_UIDS = Collections.singleton(BRIDGE_THING_TYPE);
     static final Set<ThingTypeUID> SUPPORTED_GROUP_THING_TYPES_UIDS = Stream.of(THING_TYPE_GROUP).collect(Collectors.toSet());
-    static final Set<ThingTypeUID> SUPPORTED_MODULE_THING_TYPES_UIDS = Stream.of(THING_TYPE_MODULE_TEX, THING_TYPE_MODULE_BIR, THING_TYPE_MODULE_DMR, THING_TYPE_MODULE_IS8, THING_TYPE_MODULE_IS4, THING_TYPE_MODULE_PBX, THING_TYPE_MODULE_DIM, THING_TYPE_MODULE_D10, THING_TYPE_MODULE_TRP).collect(Collectors.toSet());
+    static final Set<ThingTypeUID> SUPPORTED_MODULE_THING_TYPES_UIDS = Stream.of(THING_TYPE_MODULE_TEX, THING_TYPE_MODULE_BIR, THING_TYPE_MODULE_DMR, THING_TYPE_MODULE_IS8, THING_TYPE_MODULE_IS4, THING_TYPE_MODULE_PBX, THING_TYPE_MODULE_DIM, THING_TYPE_MODULE_D10, THING_TYPE_MODULE_TRP,
+            THING_TYPE_MODULE_TRV).collect(Collectors.toSet());
 
     //system channel names
     public static final String CHANNEL_SYSTEM_DATE = "systemDate";
